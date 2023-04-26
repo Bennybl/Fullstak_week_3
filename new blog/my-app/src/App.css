@@ -1,0 +1,54 @@
+.leftSide {
+  position:absolute;
+  right: 1%;
+  top : 20%
+}
+.shape {
+  width: 1300px;
+  height: 100px;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 10px;
+}
+
+.shape h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.shape p {
+  font-size: 12px;
+}
+#Login {
+  position:absolute;
+  right: 1%;
+}
+
+.x-square {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.x-square::before, .x-square::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.x-square::before {
+transform: rotate(45deg);
+}
+
+.x-square::after {
+transform: rotate(-45deg);
+}

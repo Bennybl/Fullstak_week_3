@@ -1,0 +1,35 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/new blog/my-app/node_modules
+/new blog/my-app/.pnp
+.pnp.js
+
+# testing
+/new blog/my-app/coverage
+
+# production
+/new blog/my-app/build
+
+/new weather/my-app/node_modules
+/new weather/my-app/.pnp
+.pnp.js
+
+# testing
+/new weather/my-app/coverage
+
+# production
+/new weather/my-app/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*S
+
+/new weather/my-app/src/AppSetting.js
