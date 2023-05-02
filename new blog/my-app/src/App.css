@@ -1,3 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.PageHeader-right {
+  float: right;
+}
+
+header > ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.PageHeader-left > li {
+  float: left !important;
+}
+.menu > a {
+  color: black;
+  padding: 10px;
+}
+
 .leftSide {
   position:absolute;
   right: 1%;
