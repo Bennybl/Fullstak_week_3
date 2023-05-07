@@ -13,7 +13,7 @@ const Header = (props) => {
                         <li class="menu"><Link to="/add">Add New Post</Link></li>
                         </div>
                         <div class="PageHeader-right">
-                        <li class="menu"><Link to="/" class="PageHeader-right">Login</Link></li>
+                        <li class="menu"><Link to="/login" class="PageHeader-right">Login</Link></li>
                         </div>
         
                 </div>
