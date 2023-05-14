@@ -4,16 +4,16 @@ const Header = (props) => {
     return (
         <header>
             <ul>
-                <div class="PageHeader">
-                    <div class="PageHeader-left">
+                <div className="PageHeader">
+                    <div className="PageHeader-left">
 
-                        <li class="menu"><Link to="/">Home</Link></li>
-                        <li class="menu"><Link to="/about">About me</Link></li>
-                        <li class="menu"><Link to="/contact">Contact</Link></li>
-                        <li class="menu"><Link to="/add">Add New Post</Link></li>
+                        <li className="menu"><Link to="/">Home</Link></li>
+                        <li className="menu"><Link to="/about">About me</Link></li>
+                        <li className="menu"><Link to="/contact">Contact</Link></li>
+                        <li className="menu"><Link to="/add">Add New Post</Link></li>
                         </div>
-                        <div class="PageHeader-right">
-                        <li class="menu"><Link to="/login" class="PageHeader-right">Login</Link></li>
+                        <div className="PageHeader-right">
+                        <li className="menu"><Link to="/login" className="PageHeader-right">Login</Link></li>
                         </div>
         
                 </div>

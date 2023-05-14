@@ -6,7 +6,7 @@ const SinglePost = (props) => {
     const {id} = useParams()
     const {title, data} = posts.find(post => post.id.toString() === id) || {}
     return (
-        <div class="single_post">
+        <div className="single_post">
             <Post title={title} data={data}></Post>
         </div>
     )

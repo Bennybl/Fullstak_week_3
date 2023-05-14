@@ -4,7 +4,7 @@ const Post = (props)=>{
     const navigate = useNavigate()
 
     return (
-        <div className="shape" onClick={() => navigate('/post/' + id)}>
+        <div className="shape" onClick={() => navigate('/post/' + id)} key={id}>
             <div className="x-square"></div>
             <h2>{title}</h2>
             <p>{data}</p>

@@ -62,7 +62,7 @@ function App() {
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/add' element={<NewPost/>}/>
                 <Route path='/login' element={<Login/>}/>
-                <Route path='/post/:id' element={<SinglePost id={useParams().id} posts={posts}/>}/>
+                <Route path='/post/:id' element={<SinglePost posts={posts}/>}/>
               </Route>
             </Routes>
         </div>
