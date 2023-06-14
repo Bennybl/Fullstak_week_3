@@ -7,11 +7,10 @@ import Left from '../components/Left';
 
 
 function Home(props) {
-  //const posts = props.posts
   const [posts, setPosts] = useState(false)
   const get_posts = async () => {
     if(posts) return
-    const result = (await axios.get("http://localhost:5000/posts")).data
+    const result = (await axios.get("/posts")).data
     setPosts(result)
   }
   get_posts()

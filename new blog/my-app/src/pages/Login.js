@@ -1,4 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { Stack } from '@mui/material';
+import {useNavigate} from "react-router-dom"
+import { baseUrl } from '../App';
+import axios from 'axios';
+import { headerLoginState } from '../components/PageHeader';
+
 import {
   
   TextField,
@@ -8,24 +14,55 @@ import {
 
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const username = useRef('')
+  const password = useRef('')
+  const navigate = useNavigate()
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+  const handleSubmit = (path) => {
+    return  async () => {
+      const data = {
+        username: username.current.value, 
+        password: password.current.value
+      }
+  
+      if (typeof data.username !== 'string' || data.username === ''){
+        alert('insert correct username')
+        return false
+      }
+      if (typeof data.password !== 'string' || data.password === ''){
+        alert('insert correct password')
+        return false
+      }
+      try{
+        const response = await axios.post(path, data)
+        alert(`${path.slice(1)} successful`)
+        return true
+      }catch (err){
+          console.log(err)
+          if (err.response){
+            alert(`something went wrong with the ${path.slice(1)} :(. status: ` + err.response.status + ' ' + err.response.statusText)
+          }
+      }
+    }
+  }
+  const login = handleSubmit('/login')
+  const handleLogin= async () => {
+    const succ = await login()
+    if(succ){
+      headerLoginState.setState(true)
+      setTimeout(() => navigate('/'), 2000)
+    }
+  }
+  const handleRegister= handleSubmit('/register')
 
   return (
     <div className='loginPage'>
-      <form className='form' onSubmit={handleSubmit}>
+      <Stack
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                spacing={3}
+            >
         <Typography className='title' variant="h4">
           Login
         </Typography>
@@ -33,16 +70,16 @@ const Login = () => {
           className='input'
           label="Email"
           type="email"
-          value={email}
-          onChange={handleEmailChange}
+          inputRef={username}
+          // onChange={handleEmailChange}
           required
         />
         <TextField
           className='input'
           label="Password"
           type="password"
-          value={password}
-          onChange={handlePasswordChange}
+          inputRef={password}
+          // onChange={handlePasswordChange}
           required
         />
         <Button
@@ -50,10 +87,20 @@ const Login = () => {
           variant="contained"
           color="primary"
           type="submit"
+          onClick={handleLogin}
         >
           Login
         </Button>
-      </form>
+        <Button
+          className='button'
+          variant="contained"
+          color="primary"
+          type="submit"
+          onClick={handleRegister}
+        >
+          Register
+        </Button>
+      </Stack>
     </div>
   );
 };

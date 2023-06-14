@@ -9,6 +9,7 @@ import SinglePost from './pages/SinglePost';
 import Login from './pages/Login';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+export const baseUrl = 'http://localhost:5000/'
 const theme = createTheme( {loginPage:{
   root: {
     display: 'flex',
@@ -53,7 +54,7 @@ function App() {
   return (
     <>
       <div className="App">
-      <ThemeProvider theme={theme}>x
+      <ThemeProvider theme={theme}>
         <div>
             <Routes>
               <Route path="/" element={<Layout />}>
